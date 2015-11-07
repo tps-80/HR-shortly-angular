@@ -13,6 +13,17 @@ angular.module('shortly.services', [])
       throw new Error(response);
     });
   };
+  Links.add = function (url, callback) {
+    $http({
+      data: { url: url },
+      method: 'POST',
+      url: '/api/links'
+    }).then(function successCallback(response) {
+      callback(response);
+    }, function errorCallback(response) {
+      throw new Error(response);
+    });
+  };
   return Links;
 })
 .factory('Auth', function ($http, $location, $window) {
