@@ -16,6 +16,10 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     // Your code here
+    .when('/shorten', {
+      templateUrl: 'app/shorten/shorten.html',
+      controller: 'ShortenController'
+    })
     .when('/', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
