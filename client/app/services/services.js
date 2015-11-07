@@ -3,7 +3,7 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
   Links = {};
-  Links.fetch = function(callback){
+  Links.fetch = function (callback) {
     $http({
       method: 'GET',
       url: '/api/links'
@@ -12,7 +12,7 @@ angular.module('shortly.services', [])
     }, function errorCallback(response) {
       throw new Error(response);
     });
-  } 
+  };
   return Links;
 })
 .factory('Auth', function ($http, $location, $window) {
