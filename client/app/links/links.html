@@ -1,5 +1,5 @@
 <div id='container'>
   <!-- Your html here -->
   <h3>Links:</h3>
-  <li ng-repeat="link in links">{{link}}</li>
+  <li ng-repeat="link in links">{{link.title}} <a href="api/links/{{link.code}}">{{link.code}}</a> Visits:{{link.visits}}</li>
 </div>

@@ -1,6 +1,28 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
+  //solution code
+
+  /*
+  var getAll = function(){
+    return $http({
+      method: 'GET',
+      url: 'api/links'
+    })
+    .then(function(resp) {
+      return resp.data;
+    })
+  }
+  var addLink = function(link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    });
+  };
+
+
+  */
   // Your code here
   Links = {};
   Links.fetch = function (callback) {
@@ -8,18 +30,22 @@ angular.module('shortly.services', [])
       method: 'GET',
       url: '/api/links'
     }).then(function successCallback(response) {
-      callback(response);
+      if (callback) {
+        callback(response);
+      }
     }, function errorCallback(response) {
       throw new Error(response);
     });
   };
-  Links.add = function (url, callback) {
+  Links.addLink = function (url, callback) {
     $http({
       data: { url: url },
       method: 'POST',
       url: '/api/links'
     }).then(function successCallback(response) {
-      callback(response);
+      if (callback) {
+        callback(response);
+      }
     }, function errorCallback(response) {
       throw new Error(response);
     });
