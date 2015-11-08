@@ -18,12 +18,12 @@ angular.module('shortly.links', [])
 
 
   // Your code here
-  $scope.getLinks = function() {
+  $scope.getLinks = function () {
     Links.fetch(function (response) {
-    console.log(response)
+    console.log(response);
 
       $scope.links = response.data;
     });
-  }
+  };
   $scope.getLinks();
 });

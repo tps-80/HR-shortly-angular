@@ -32,7 +32,7 @@ angular.module('shortly', [
       authenticate: true
     })
     .otherwise({
-      redirectTo:'/signin'
+      redirectTo: '/signin'
     });
 
 
